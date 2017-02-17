@@ -144,9 +144,6 @@ npmconf.load({}, function(err, conf) {
             release.version += '-' + options.append;
           }
 
-          console.log(release);
-          process.exit(0);
-
           let message = 'Determined version ' + release.version + ' as "' + npm.tag + '".';
 
           log.verbose('pre', message);

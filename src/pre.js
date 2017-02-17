@@ -29,6 +29,10 @@ module.exports = function(config, cb) {
       return cb(err);
     }
 
+    if (config.options.append) {
+      results.lastRelease.version = results.lastRelease.version.replace('-' + config.options.append, '');
+    }
+
     let nextRelease = {
       type   : results.type,
       version: results.type === 'initial'
